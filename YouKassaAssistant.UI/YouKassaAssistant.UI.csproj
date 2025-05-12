@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows10.0.17763.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.1.66" />
+		<PackageReference Include="EPPlus" Version="7.6.0" />
+		<PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.7" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0-preview.1.24080.9" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="ScottPlot" Version="5.0.54" />
+		<PackageReference Include="ScottPlot.WinForms" Version="5.0.54" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="FormWorker.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormAdmin.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogHistory.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogAuth.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogWorkerEdit.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogWorkerList.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogStatisctics.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogRegistration.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogPartnerInfo.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="MessageElement.cs">
+		  <SubType>Component</SubType>
+		</Compile>
+		<Compile Update="FormClient.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormAuth.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="FormDialog\DialogTikets.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Update="MainForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="TiketsPanel.cs">
+		  <SubType>Component</SubType>
+		</Compile>
+	</ItemGroup>
+
+</Project>
