@@ -1,14 +1,17 @@
 ﻿using Guna.UI2.WinForms;
-using Guna.UI2.WinForms.Suite;
 using System.ComponentModel;
-using System.Globalization;
 using YouKassaAssistant.UI.Domain;
+using YouKassaAssistant.UI.Infrastructure.Repositories;
 
 namespace YouKassaAssistant.UI;
 
 public class TiketsPanel : Guna2Panel
 {
     private Tikets tikets;
+    private WorkerRepository _workerRepository;
+    private List<Worker> _workers;
+
+    private bool isChecked = false;
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
     public Guna2HtmlLabel ThemeLabel { get; private set; }
@@ -63,33 +66,41 @@ public class TiketsPanel : Guna2Panel
         InitializeComponent();
     }
 
-    public TiketsPanel(Tikets order, List<Worker> workers) : this()
+    public TiketsPanel(Tikets order, List<Worker> workers, WorkerRepository workerRepository = null) : this()
     {
-        UpdateInfoOrderPanel(order, workers);
+        _workerRepository = workerRepository;
+        _workers = workers;
+        tikets = order;
+
+        UpdateInfoOrderPanel();
     }
 
-    public void UpdateInfoOrderPanel(Tikets order, List<Worker> workers)
+    public void UpdateInfoOrderPanel()
     {
-        ThemeLabel.Text = $"Тема: {order.Theme}";
-        DescriptionLabel.Text = $"Описание: {(order.Description.Count() > 30 ? order.Description.Substring(0, 30) + "..." : order.Description)}";
-        AboutInfoLabel.Text = $"Статус: {order.Status}; Поставлено: {order.DateCreate:g}";
-        PriceLabel.Text = $"Цена: {(order.Price == -1 ? "не определена" : order.Price)}";
+        ThemeLabel.Text = $"Тема: {tikets.Theme}";
+        DescriptionLabel.Text = $"Описание: {(tikets.Description.Count() > 30 ? tikets.Description.Substring(0, 30) + "..." : tikets.Description)}";
+        AboutInfoLabel.Text = $"Статус: {tikets.Status}; Поставлено: {tikets.DateCreate:g}";
+        PriceLabel.Text = $"Цена: {(tikets.Price == -1 ? "не определена" : tikets.Price)}";
 
-        RatingStarCheked.Value = order.Score;
+        RatingStarCheked.Value = tikets.Score;
 
-        CheckedLabel.Visible = order.IsVisible;
+        CheckedLabel.Visible = tikets.IsVisible;
 
-        FireButton.Visible = order.IsFire;
+        FireButton.Visible = tikets.IsFire;
 
-        if (CurrentUser.Position is "Админ")
+        if (CurrentUser.Position is "админ")
         {
             CheckButton.Visible = false;
             WorkerComboBox.Visible = true;
-            WorkerComboBox.Items.AddRange(workers.ToArray());
+            WorkerComboBox.Items.AddRange(_workers.ToArray());
             WorkerComboBox.DisplayMember = "FirstName";
 
-            if (order.WorkerId > 0)
-                WorkerComboBox.SelectedItem = workers.First(x => x.WorkerId == order.WorkerId);
+            if (tikets.WorkerId > 0)
+                WorkerComboBox.SelectedItem = _workers.First(x => x.WorkerId == tikets.WorkerId);
+
+            WorkerComboBox.Enabled = tikets.Status is not "завершено";
+
+            isChecked = true;
         }
     }
 
@@ -171,6 +182,7 @@ public class TiketsPanel : Guna2Panel
         WorkerComboBox.Location = new Point(310, 152);
         WorkerComboBox.Size = new Size(152, 40);
         WorkerComboBox.Visible = false;
+        WorkerComboBox.SelectedIndexChanged += ChangeBox;
 
         AboutInfoLabel = new Guna2HtmlLabel();
         AboutInfoLabel.BackColor = Color.Transparent;
@@ -211,5 +223,33 @@ public class TiketsPanel : Guna2Panel
         Controls.Add(CheckButton);
         Controls.Add(BorderPanel);
         Controls.Add(WorkerComboBox);
+    }
+
+    private void ChangeBox(object sender, EventArgs e)
+    {
+        if (sender is Guna2ComboBox guna2Combo && _workerRepository is not null && isChecked)
+        {
+            if (guna2Combo.SelectedItem is Worker selectedWorker)
+            {
+                var txt = "";
+
+                if (tikets.WorkerId > 0)
+                {
+                    txt = $"Вы подтверждаете смену ответственного с {tikets.WorkerFullName} на {selectedWorker.LastName} {selectedWorker.FirstName}?";
+                }
+                else
+                {
+                    txt = $"Вы подтверждаете, что ответственным будет {selectedWorker.LastName} {selectedWorker.FirstName}?";
+                }
+
+                var results = MessageBox.Show(txt, "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (results is DialogResult.Yes)
+                {
+                    _workerRepository.UpdateWorkerTiketsAsync(tikets.Id, selectedWorker.WorkerId);
+                    _workerRepository.UpdateStatusTiketsAsync(tikets.Id, "в работе");
+                }
+            }
+        }
     }
 }

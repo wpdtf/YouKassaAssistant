@@ -133,7 +133,7 @@ public class MessageElement : Guna2Panel
             if (CurrentUser.Position.Count() == 0)
                 result = await _clientRepository.GetMessageAsync(MessageInfo.IdMessage);
             else
-                result = await _clientRepository.GetMessageAsync(MessageInfo.IdMessage);
+                result = await _workerRepository.GetMessageAsync(MessageInfo.IdMessage);
 
             UpdateInfoOrderPanel(result);
         }

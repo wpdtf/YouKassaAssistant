@@ -1,5 +1,6 @@
 using Guna.UI2.WinForms;
 using System.Diagnostics;
+using System.Globalization;
 using System.Threading.Tasks;
 using YouKassaAssistant.UI.Domain;
 using YouKassaAssistant.UI.Infrastructure.Repositories;
@@ -31,7 +32,10 @@ public partial class DialogTikets : Form
 
     private void UpdateForm()
     {
-        Tikets = _clientRepository.GetTiketsAsync(Tikets.Id);
+        if (CurrentUser.Position.Count() == 0)
+            Tikets = _clientRepository.GetTiketsAsync(Tikets.Id);
+        else
+            Tikets = _workerRepository.GetTiketsAsync(Tikets.Id);
 
         RatingStar.Value = Tikets.Score;
 
@@ -43,11 +47,13 @@ public partial class DialogTikets : Form
         if (Tikets.ImageBytes is not null)
             Images.Image = ByteArrayToImage(Tikets.ImageBytes);
 
+        price.Text = Tikets.Price.ToString();
 
         switch (Tikets.Status)
         {
             case "новое":
                 guna2Button2.Text = "Отменить";
+                _Message.ReadOnly = false;
                 break;
             case "в работе":
                 if (CurrentUser.Position.Count() > 0)
@@ -57,24 +63,31 @@ public partial class DialogTikets : Form
                 }
                 else
                     guna2Button2.Visible = false;
+                _Message.ReadOnly = false;
                 break;
             case "ждем оплаты":
                 if (CurrentUser.Position.Count() > 0)
                     guna2Button2.Visible = false;
                 else
                     guna2Button2.Text = "Оплатить";
+                _Message.ReadOnly = false;
                 break;
             case "возвращено":
                 if (CurrentUser.Position.Count() > 0)
                     guna2Button2.Text = "Готово";
                 else
                     guna2Button2.Visible = false;
+                _Message.ReadOnly = false;
                 break;
             case "завершено":
                 RatingStar.ReadOnly = false;
                 guna2Button2.Text = "Вернуть";
+                _Message.ReadOnly = true;
                 break;
         }
+
+        if (CurrentUser.Position.Count() > 0)
+            RatingStar.ReadOnly = true;
     }
 
     public async Task UpdateListMessageAsync()
@@ -84,7 +97,7 @@ public partial class DialogTikets : Form
         if (CurrentUser.Position.Count() == 0)
             listMessage = await _clientRepository.GetListMessageAsync(Tikets.Id);
         else
-            listMessage = await _clientRepository.GetListMessageAsync(Tikets.Id);
+            listMessage = await _workerRepository.GetListMessageAsync(Tikets.Id);
 
 
         foreach (var item in listMessage)
@@ -157,20 +170,24 @@ public partial class DialogTikets : Form
         switch (Tikets.Status)
         {
             case "новое":
-                _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "завершено");
+                if (CurrentUser.Position.Count() == 0)
+                    _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "завершено");
                 break;
             case "в работе":
                 if (CurrentUser.Position.Count() > 0)
-                    _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "ждем оплаты");
+                    _workerRepository.UpdateStatusTiketsAsync(Tikets.Id, "ждем оплаты");
                 break;
             case "ждем оплаты":
-                _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "завершено");
+                if (CurrentUser.Position.Count() == 0)
+                    _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "завершено");
                 break;
             case "возвращено":
-                _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "завершено");
+                if (CurrentUser.Position.Count() > 0)
+                    _workerRepository.UpdateStatusTiketsAsync(Tikets.Id, "завершено");
                 break;
             case "завершено":
-                _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "возвращено");
+                if (CurrentUser.Position.Count() == 0)
+                    _clientRepository.UpdateStatusTiketsAsync(Tikets.Id, "возвращено");
                 break;
         }
 
@@ -189,7 +206,7 @@ public partial class DialogTikets : Form
             if (CurrentUser.Position.Count() == 0)
                 await _clientRepository.CreateMessageAsync(Tikets.Id, _Message.Text);
             else
-                await _clientRepository.CreateMessageAsync(Tikets.Id, _Message.Text);
+                await _workerRepository.SendMessageAsync(_Message.Text, Tikets.Id);
 
             _Message.Text = "";
             await UpdateListMessageAsync();
@@ -215,7 +232,7 @@ public partial class DialogTikets : Form
             if (CurrentUser.Position.Count() == 0)
                 result = await _clientRepository.GetListMessageAsync(Tikets.Id);
             else
-                result = await _clientRepository.GetListMessageAsync(Tikets.Id);
+                result = await _workerRepository.GetListMessageAsync(Tikets.Id);
 
             if (result.Count != listMessage.Count)
             {
@@ -227,6 +244,32 @@ public partial class DialogTikets : Form
 
     private async void RatingStar_ValueChanged(object sender, EventArgs e)
     {
-        _clientRepository.UpdateScoreTiketsAsync(Tikets.Id, RatingStar.Value);
+        if (_clientRepository is not null)
+            _clientRepository.UpdateScoreTiketsAsync(Tikets.Id, RatingStar.Value);
+    }
+
+    private async void price_Leave(object sender, EventArgs e)
+    {
+        if (!IsValidNumberDecimal(price.Text) && price.Text.Count() > 0)
+        {
+            MessageBox.Show("Введите корректную стоимость обращения (положительным числом с плавающей точкой)!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            price.Focus();
+            return;
+        }
+
+        if (price.Text.Count() > 0)
+        {
+            _workerRepository.UpdatePriceAsync(Tikets.Id, Convert.ToDecimal(price.Text));
+        }
+
+    }
+
+    static bool IsValidNumberDecimal(string text)
+    {
+        if (decimal.TryParse(text, NumberStyles.Any, CultureInfo.GetCultureInfo("ru-RU"), out decimal num))
+        {
+            return num > 0m && num <= decimal.MaxValue;
+        }
+        return false;
     }
 }

@@ -22,8 +22,6 @@ partial class DialogStatisctics
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogStatisctics));
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -44,7 +42,6 @@ partial class DialogStatisctics
         label3 = new Label();
         guna2DragControl1 = new Guna2DragControl(components);
         guna2BorderlessForm1 = new Guna2BorderlessForm(components);
-        btnSave = new Guna2Button();
         guna2ImageButton1 = new Guna2ImageButton();
         guna2HtmlLabel1 = new Guna2HtmlLabel();
         guna2Button1 = new Guna2Button();
@@ -129,28 +126,6 @@ partial class DialogStatisctics
         guna2BorderlessForm1.DragStartTransparencyValue = 1D;
         guna2BorderlessForm1.TransparentWhileDrag = true;
         // 
-        // btnSave
-        // 
-        btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        btnSave.BackColor = Color.Transparent;
-        btnSave.BorderRadius = 5;
-        btnSave.CustomizableEdges = customizableEdges14;
-        btnSave.DisabledState.BorderColor = Color.DarkGray;
-        btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
-        btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-        btnSave.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-        btnSave.FillColor = Color.FromArgb(16, 20, 27);
-        btnSave.Font = new Font("Segoe UI", 9F);
-        btnSave.ForeColor = Color.White;
-        btnSave.Location = new Point(113, 77);
-        btnSave.Name = "btnSave";
-        btnSave.ShadowDecoration.CustomizableEdges = customizableEdges15;
-        btnSave.Size = new Size(179, 40);
-        btnSave.TabIndex = 92;
-        btnSave.TabStop = false;
-        btnSave.Text = "О выполненных работах";
-        btnSave.Click += btnSave_Click;
-        // 
         // guna2ImageButton1
         // 
         guna2ImageButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -197,6 +172,7 @@ partial class DialogStatisctics
         guna2Button1.TabIndex = 113;
         guna2Button1.TabStop = false;
         guna2Button1.Text = "Об оценках приложения";
+        guna2Button1.Click += guna2Button1_Click;
         // 
         // guna2Button3
         // 
@@ -218,6 +194,7 @@ partial class DialogStatisctics
         guna2Button3.TabIndex = 114;
         guna2Button3.TabStop = false;
         guna2Button3.Text = "Об оценках обращения";
+        guna2Button3.Click += guna2Button3_Click;
         // 
         // guna2Button4
         // 
@@ -239,6 +216,7 @@ partial class DialogStatisctics
         guna2Button4.TabIndex = 115;
         guna2Button4.TabStop = false;
         guna2Button4.Text = "Об оплате";
+        guna2Button4.Click += guna2Button4_Click;
         // 
         // guna2Button5
         // 
@@ -260,6 +238,7 @@ partial class DialogStatisctics
         guna2Button5.TabIndex = 116;
         guna2Button5.TabStop = false;
         guna2Button5.Text = "📇";
+        guna2Button5.Click += guna2Button5_Click;
         // 
         // guna2DataGridView1
         // 
@@ -346,7 +325,6 @@ partial class DialogStatisctics
         Controls.Add(guna2Button1);
         Controls.Add(guna2HtmlLabel1);
         Controls.Add(guna2ImageButton1);
-        Controls.Add(btnSave);
         Controls.Add(panel2);
         Font = new Font("Segoe UI", 9F);
         FormBorderStyle = FormBorderStyle.None;
@@ -370,7 +348,6 @@ partial class DialogStatisctics
     private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-    private Guna2Button btnSave;
     private Guna2ImageButton guna2ImageButton1;
     private Guna2HtmlLabel guna2HtmlLabel1;
     private Guna2Button guna2Button4;

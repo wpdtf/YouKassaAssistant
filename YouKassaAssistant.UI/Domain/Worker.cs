@@ -5,7 +5,7 @@ namespace YouKassaAssistant.UI.Domain;
 /// <summary>
 /// Модель для сотрудника
 /// </summary>
-public class Worker
+public class Worker : AuthDTO
 {
     /// <summary>
     /// Ключ сотрудника
@@ -27,6 +27,12 @@ public class Worker
     public string LastName { get; set; }
 
     /// <summary>
+    /// Отчество сотрудника
+    /// </summary>
+    [DisplayName("Отчество сотрудника")]
+    public string MiddleName { get; set; }
+
+    /// <summary>
     /// Позиция сотрудника
     /// </summary>
     [DisplayName("Позиция сотрудника")]
@@ -37,10 +43,4 @@ public class Worker
     /// </summary>
     [DisplayName("Телефон сотрудника")]
     public string Phone { get; set; }
-
-    /// <summary>
-    /// Дата начала работы сотрудника
-    /// </summary>
-    [DisplayName("Дата начала работы сотрудника")]
-    public DateTime DateStart { get; set; }
 }

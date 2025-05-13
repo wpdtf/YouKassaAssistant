@@ -18,24 +18,24 @@ partial class DialogTikets
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogTikets));
         panel2 = new Panel();
         guna2ControlBox1 = new Guna2ControlBox();
@@ -76,13 +76,13 @@ partial class DialogTikets
         guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         guna2ControlBox1.Animated = true;
         guna2ControlBox1.Cursor = Cursors.Hand;
-        guna2ControlBox1.CustomizableEdges = customizableEdges19;
+        guna2ControlBox1.CustomizableEdges = customizableEdges1;
         guna2ControlBox1.FillColor = Color.FromArgb(16, 20, 27);
         guna2ControlBox1.IconColor = Color.White;
         guna2ControlBox1.Location = new Point(863, 6);
         guna2ControlBox1.Margin = new Padding(3, 2, 3, 2);
         guna2ControlBox1.Name = "guna2ControlBox1";
-        guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+        guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
         guna2ControlBox1.Size = new Size(35, 30);
         guna2ControlBox1.TabIndex = 21;
         guna2ControlBox1.Click += _btnCancel_Click;
@@ -92,13 +92,13 @@ partial class DialogTikets
         guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         guna2ControlBox2.Animated = true;
         guna2ControlBox2.Cursor = Cursors.Hand;
-        guna2ControlBox2.CustomizableEdges = customizableEdges21;
+        guna2ControlBox2.CustomizableEdges = customizableEdges3;
         guna2ControlBox2.FillColor = Color.FromArgb(0, 0, 64);
         guna2ControlBox2.IconColor = Color.White;
         guna2ControlBox2.Location = new Point(1105, 5);
         guna2ControlBox2.Margin = new Padding(3, 2, 3, 2);
         guna2ControlBox2.Name = "guna2ControlBox2";
-        guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges22;
+        guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
         guna2ControlBox2.Size = new Size(35, 30);
         guna2ControlBox2.TabIndex = 20;
         // 
@@ -136,7 +136,7 @@ partial class DialogTikets
         _Message.AutoScroll = true;
         _Message.BorderRadius = 12;
         _Message.Cursor = Cursors.IBeam;
-        _Message.CustomizableEdges = customizableEdges35;
+        _Message.CustomizableEdges = customizableEdges17;
         _Message.DefaultText = "";
         _Message.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         _Message.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -152,7 +152,7 @@ partial class DialogTikets
         _Message.PlaceholderText = "Сообщение...";
         _Message.ScrollBars = ScrollBars.Vertical;
         _Message.SelectedText = "";
-        _Message.ShadowDecoration.CustomizableEdges = customizableEdges36;
+        _Message.ShadowDecoration.CustomizableEdges = customizableEdges18;
         _Message.Size = new Size(345, 74);
         _Message.TabIndex = 63;
         // 
@@ -185,7 +185,7 @@ partial class DialogTikets
         Description.AutoScroll = true;
         Description.BorderRadius = 12;
         Description.Cursor = Cursors.IBeam;
-        Description.CustomizableEdges = customizableEdges31;
+        Description.CustomizableEdges = customizableEdges13;
         Description.DefaultText = "";
         Description.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         Description.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -199,8 +199,9 @@ partial class DialogTikets
         Description.Multiline = true;
         Description.Name = "Description";
         Description.PlaceholderText = "Сообщение...";
+        Description.ReadOnly = true;
         Description.SelectedText = "";
-        Description.ShadowDecoration.CustomizableEdges = customizableEdges32;
+        Description.ShadowDecoration.CustomizableEdges = customizableEdges14;
         Description.Size = new Size(369, 412);
         Description.TabIndex = 90;
         // 
@@ -209,7 +210,7 @@ partial class DialogTikets
         Theme.AutoScroll = true;
         Theme.BorderRadius = 12;
         Theme.Cursor = Cursors.IBeam;
-        Theme.CustomizableEdges = customizableEdges33;
+        Theme.CustomizableEdges = customizableEdges15;
         Theme.DefaultText = "";
         Theme.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         Theme.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -223,8 +224,9 @@ partial class DialogTikets
         Theme.Multiline = true;
         Theme.Name = "Theme";
         Theme.PlaceholderText = "Тема...";
+        Theme.ReadOnly = true;
         Theme.SelectedText = "";
-        Theme.ShadowDecoration.CustomizableEdges = customizableEdges34;
+        Theme.ShadowDecoration.CustomizableEdges = customizableEdges16;
         Theme.Size = new Size(369, 38);
         Theme.TabIndex = 89;
         Theme.WordWrap = false;
@@ -232,11 +234,11 @@ partial class DialogTikets
         // Images
         // 
         Images.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        Images.CustomizableEdges = customizableEdges29;
+        Images.CustomizableEdges = customizableEdges11;
         Images.ImageRotate = 0F;
         Images.Location = new Point(12, 509);
         Images.Name = "Images";
-        Images.ShadowDecoration.CustomizableEdges = customizableEdges30;
+        Images.ShadowDecoration.CustomizableEdges = customizableEdges12;
         Images.Size = new Size(183, 179);
         Images.SizeMode = PictureBoxSizeMode.Zoom;
         Images.TabIndex = 91;
@@ -248,7 +250,7 @@ partial class DialogTikets
         guna2Button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
         guna2Button1.BackColor = Color.Transparent;
         guna2Button1.BorderRadius = 5;
-        guna2Button1.CustomizableEdges = customizableEdges27;
+        guna2Button1.CustomizableEdges = customizableEdges9;
         guna2Button1.DisabledState.BorderColor = Color.DarkGray;
         guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
         guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -258,7 +260,7 @@ partial class DialogTikets
         guna2Button1.ForeColor = Color.White;
         guna2Button1.Location = new Point(758, 648);
         guna2Button1.Name = "guna2Button1";
-        guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges28;
+        guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
         guna2Button1.Size = new Size(140, 40);
         guna2Button1.TabIndex = 92;
         guna2Button1.Text = "Отправить";
@@ -269,7 +271,7 @@ partial class DialogTikets
         guna2Button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
         guna2Button2.BackColor = Color.Transparent;
         guna2Button2.BorderRadius = 5;
-        guna2Button2.CustomizableEdges = customizableEdges25;
+        guna2Button2.CustomizableEdges = customizableEdges7;
         guna2Button2.DisabledState.BorderColor = Color.DarkGray;
         guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
         guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -279,7 +281,7 @@ partial class DialogTikets
         guna2Button2.ForeColor = Color.White;
         guna2Button2.Location = new Point(201, 648);
         guna2Button2.Name = "guna2Button2";
-        guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges26;
+        guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
         guna2Button2.Size = new Size(178, 40);
         guna2Button2.TabIndex = 93;
         guna2Button2.Text = "Закрыть обращение";
@@ -301,7 +303,7 @@ partial class DialogTikets
         price.AutoScroll = true;
         price.BorderRadius = 12;
         price.Cursor = Cursors.IBeam;
-        price.CustomizableEdges = customizableEdges23;
+        price.CustomizableEdges = customizableEdges5;
         price.DefaultText = "";
         price.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
         price.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -316,11 +318,12 @@ partial class DialogTikets
         price.Name = "price";
         price.PlaceholderText = "Оплата...";
         price.SelectedText = "";
-        price.ShadowDecoration.CustomizableEdges = customizableEdges24;
+        price.ShadowDecoration.CustomizableEdges = customizableEdges6;
         price.Size = new Size(178, 38);
         price.TabIndex = 95;
         price.Visible = false;
         price.WordWrap = false;
+        price.Leave += price_Leave;
         // 
         // DialogTikets
         // 

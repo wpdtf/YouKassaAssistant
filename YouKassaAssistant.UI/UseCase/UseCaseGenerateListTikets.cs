@@ -1,4 +1,5 @@
-﻿using YouKassaAssistant.UI.Domain;
+﻿using Guna.UI2.WinForms;
+using YouKassaAssistant.UI.Domain;
 using YouKassaAssistant.UI.FormDialog;
 using YouKassaAssistant.UI.Infrastructure.Repositories;
 
@@ -6,12 +7,12 @@ namespace YouKassaAssistant.UI.UseCase;
 
 class UseCaseGenerateListTikets
 {
-    private static List<Tikets> tikets = new();
-    private static List<Worker> worker = new();
+    private static List<Tikets> tikets = [];
+    private static List<Worker> worker = [];
 
     public static async Task GenerateElementTikets(FlowLayoutPanel flowLayoutPanel, CreateConnectionToBack _sendToBack, string filter, bool isReadOnly, ClientRepository clientRepository = null, WorkerRepository workerRepository = null)
     {
-        var random = new Random();
+        flowLayoutPanel.Controls.Clear();
 
         if (CurrentUser.Position is "")
         {
@@ -19,14 +20,13 @@ class UseCaseGenerateListTikets
         }
         else
         {
-
+            tikets = await workerRepository.GetListTiketsAsync(filter);
+            worker = await workerRepository.GetListWorkerAsync();
         }
-
-            flowLayoutPanel.Controls.Clear();
 
         foreach (var item in tikets)
         {
-            var element = new TiketsPanel(item, worker);
+            var element = new TiketsPanel(item, worker, workerRepository);
 
             element.CheckButton.Click += (s, e) =>
             {
@@ -38,65 +38,3 @@ class UseCaseGenerateListTikets
         }
     }
 }
-
-/*
-        worker.Add(new Worker
-        {
-            WorkerId = 1,
-            FirstName = "qwe",
-            LastName = "qweqweqwe",
-            DateStart = DateTime.Now.AddDays(random.Next(-40, -20)).AddMinutes(random.Next(-40, -20)).AddHours(random.Next(-40, -20)).AddSeconds(random.Next(-40, -20)),
-            Phone = "adasdasda",
-            Position = "asdasdas"
-        });
-
-        worker.Add(new Worker
-        {
-            WorkerId = 1,
-            FirstName = "asd",
-            LastName = "asdasdasd",
-            DateStart = DateTime.Now.AddDays(random.Next(-40, -20)).AddMinutes(random.Next(-40, -20)).AddHours(random.Next(-40, -20)).AddSeconds(random.Next(-40, -20)),
-            Phone = "adasdasda",
-            Position = "asdasdas"
-        });
-
-        worker.Add(new Worker
-        {
-            WorkerId = 2,
-            FirstName = "zxc",
-            LastName = "zxczxczxc",
-            DateStart = DateTime.Now.AddDays(random.Next(-40, -20)).AddMinutes(random.Next(-40, -20)).AddHours(random.Next(-40, -20)).AddSeconds(random.Next(-40, -20)),
-            Phone = "adasdasda",
-            Position = "asdasdas"
-        });
-
-        worker.Add(new Worker
-        {
-            WorkerId = 3,
-            FirstName = "rty",
-            LastName = "rtyrtyrty",
-            DateStart = DateTime.Now.AddDays(random.Next(-40, -20)).AddMinutes(random.Next(-40, -20)).AddHours(random.Next(-40, -20)).AddSeconds(random.Next(-40, -20)),
-            Phone = "adasdasda",
-            Position = "asdasdas"
-        });
-
-        worker.Add(new Worker
-        {
-            WorkerId = 4,
-            FirstName = "fgh",
-            LastName = "fghfghfgh",
-            DateStart = DateTime.Now.AddDays(random.Next(-40, -20)).AddMinutes(random.Next(-40, -20)).AddHours(random.Next(-40, -20)).AddSeconds(random.Next(-40, -20)),
-            Phone = "adasdasda",
-            Position = "asdasdas"
-        });
-
-        worker.Add(new Worker
-        {
-            WorkerId = 5,
-            FirstName = "vbn",
-            LastName = "vbnvbnvbn",
-            DateStart = DateTime.Now.AddDays(random.Next(-40, -20)).AddMinutes(random.Next(-40, -20)).AddHours(random.Next(-40, -20)).AddSeconds(random.Next(-40, -20)),
-            Phone = "adasdasda",
-            Position = "asdasdas"
-        });
-*/

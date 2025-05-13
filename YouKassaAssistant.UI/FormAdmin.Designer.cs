@@ -31,24 +31,26 @@ partial class FormAdmin
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-        Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
         DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
         DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
         DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -60,17 +62,18 @@ partial class FormAdmin
         guna2ControlBox1 = new Guna2ControlBox();
         guna2DragControl1 = new Guna2DragControl(components);
         guna2Panel1 = new Guna2Panel();
+        guna2Button2 = new Guna2Button();
+        guna2Button1 = new Guna2Button();
         guna2ComboBox1 = new Guna2ComboBox();
         guna2ImageButton1 = new Guna2ImageButton();
         btnLk = new Guna2Button();
         btnHistory = new Guna2Button();
         guna2Panel2 = new Guna2Panel();
+        guna2DataGridView1 = new Guna2DataGridView();
         guna2HtmlLabel2 = new Guna2HtmlLabel();
         openFileDialog1 = new OpenFileDialog();
         flowLayoutPanel1 = new FlowLayoutPanel();
         guna2HtmlLabel3 = new Guna2HtmlLabel();
-        guna2Button1 = new Guna2Button();
-        guna2DataGridView1 = new Guna2DataGridView();
         panel2.SuspendLayout();
         guna2Panel1.SuspendLayout();
         guna2Panel2.SuspendLayout();
@@ -116,13 +119,13 @@ partial class FormAdmin
         guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         guna2ControlBox2.Animated = true;
         guna2ControlBox2.Cursor = Cursors.Hand;
-        guna2ControlBox2.CustomizableEdges = customizableEdges14;
+        guna2ControlBox2.CustomizableEdges = customizableEdges16;
         guna2ControlBox2.FillColor = Color.FromArgb(16, 20, 27);
         guna2ControlBox2.IconColor = Color.White;
         guna2ControlBox2.Location = new Point(910, 5);
         guna2ControlBox2.Margin = new Padding(3, 2, 3, 2);
         guna2ControlBox2.Name = "guna2ControlBox2";
-        guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges15;
+        guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges17;
         guna2ControlBox2.Size = new Size(35, 30);
         guna2ControlBox2.TabIndex = 19;
         guna2ControlBox2.Click += guna2ControlBox2_Click;
@@ -133,13 +136,13 @@ partial class FormAdmin
         guna2ControlBox1.Animated = true;
         guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
         guna2ControlBox1.Cursor = Cursors.Hand;
-        guna2ControlBox1.CustomizableEdges = customizableEdges16;
+        guna2ControlBox1.CustomizableEdges = customizableEdges18;
         guna2ControlBox1.FillColor = Color.FromArgb(16, 20, 27);
         guna2ControlBox1.IconColor = Color.White;
         guna2ControlBox1.Location = new Point(871, 5);
         guna2ControlBox1.Margin = new Padding(3, 2, 3, 2);
         guna2ControlBox1.Name = "guna2ControlBox1";
-        guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges17;
+        guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges19;
         guna2ControlBox1.Size = new Size(35, 30);
         guna2ControlBox1.TabIndex = 18;
         // 
@@ -153,18 +156,61 @@ partial class FormAdmin
         // guna2Panel1
         // 
         guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        guna2Panel1.Controls.Add(guna2Button2);
         guna2Panel1.Controls.Add(guna2Button1);
         guna2Panel1.Controls.Add(guna2ComboBox1);
         guna2Panel1.Controls.Add(guna2ImageButton1);
         guna2Panel1.Controls.Add(btnLk);
         guna2Panel1.Controls.Add(btnHistory);
-        guna2Panel1.CustomizableEdges = customizableEdges12;
+        guna2Panel1.CustomizableEdges = customizableEdges14;
         guna2Panel1.FillColor = Color.FromArgb(67, 74, 84);
         guna2Panel1.Location = new Point(0, 40);
         guna2Panel1.Name = "guna2Panel1";
-        guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
+        guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges15;
         guna2Panel1.Size = new Size(959, 60);
         guna2Panel1.TabIndex = 16;
+        // 
+        // guna2Button2
+        // 
+        guna2Button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+        guna2Button2.BackColor = Color.Transparent;
+        guna2Button2.BorderRadius = 5;
+        guna2Button2.CustomizableEdges = customizableEdges3;
+        guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+        guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+        guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        guna2Button2.FillColor = Color.FromArgb(16, 20, 27);
+        guna2Button2.Font = new Font("Segoe UI", 9F);
+        guna2Button2.ForeColor = Color.White;
+        guna2Button2.Location = new Point(95, 7);
+        guna2Button2.Name = "guna2Button2";
+        guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+        guna2Button2.Size = new Size(152, 40);
+        guna2Button2.TabIndex = 75;
+        guna2Button2.Text = "Обновить";
+        guna2Button2.Click += guna2Button2_Click;
+        // 
+        // guna2Button1
+        // 
+        guna2Button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+        guna2Button1.BackColor = Color.Transparent;
+        guna2Button1.BorderRadius = 5;
+        guna2Button1.CustomizableEdges = customizableEdges5;
+        guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+        guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+        guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+        guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+        guna2Button1.FillColor = Color.FromArgb(16, 20, 27);
+        guna2Button1.Font = new Font("Segoe UI", 9F);
+        guna2Button1.ForeColor = Color.White;
+        guna2Button1.Location = new Point(569, 7);
+        guna2Button1.Name = "guna2Button1";
+        guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        guna2Button1.Size = new Size(152, 40);
+        guna2Button1.TabIndex = 74;
+        guna2Button1.Text = "Сотрудники";
+        guna2Button1.Click += guna2Button1_Click;
         // 
         // guna2ComboBox1
         // 
@@ -172,7 +218,7 @@ partial class FormAdmin
         guna2ComboBox1.BackColor = Color.Transparent;
         guna2ComboBox1.BorderColor = Color.Transparent;
         guna2ComboBox1.BorderRadius = 5;
-        guna2ComboBox1.CustomizableEdges = customizableEdges5;
+        guna2ComboBox1.CustomizableEdges = customizableEdges7;
         guna2ComboBox1.DisplayMember = "1";
         guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
         guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -185,9 +231,10 @@ partial class FormAdmin
         guna2ComboBox1.Items.AddRange(new object[] { "сортировка по статусу", "сортировка важности" });
         guna2ComboBox1.Location = new Point(727, 9);
         guna2ComboBox1.Name = "guna2ComboBox1";
-        guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+        guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
         guna2ComboBox1.Size = new Size(218, 36);
         guna2ComboBox1.TabIndex = 73;
+        guna2ComboBox1.SelectedIndexChanged += guna2ComboBox1_SelectedIndexChanged;
         // 
         // guna2ImageButton1
         // 
@@ -201,7 +248,7 @@ partial class FormAdmin
         guna2ImageButton1.Location = new Point(3, 3);
         guna2ImageButton1.Name = "guna2ImageButton1";
         guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
-        guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges7;
+        guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges9;
         guna2ImageButton1.Size = new Size(73, 54);
         guna2ImageButton1.TabIndex = 17;
         // 
@@ -210,7 +257,7 @@ partial class FormAdmin
         btnLk.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
         btnLk.BackColor = Color.Transparent;
         btnLk.BorderRadius = 5;
-        btnLk.CustomizableEdges = customizableEdges8;
+        btnLk.CustomizableEdges = customizableEdges10;
         btnLk.DisabledState.BorderColor = Color.DarkGray;
         btnLk.DisabledState.CustomBorderColor = Color.DarkGray;
         btnLk.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -220,7 +267,7 @@ partial class FormAdmin
         btnLk.ForeColor = Color.White;
         btnLk.Location = new Point(411, 7);
         btnLk.Name = "btnLk";
-        btnLk.ShadowDecoration.CustomizableEdges = customizableEdges9;
+        btnLk.ShadowDecoration.CustomizableEdges = customizableEdges11;
         btnLk.Size = new Size(152, 40);
         btnLk.TabIndex = 71;
         btnLk.Text = "Статистика";
@@ -231,7 +278,7 @@ partial class FormAdmin
         btnHistory.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
         btnHistory.BackColor = Color.Transparent;
         btnHistory.BorderRadius = 5;
-        btnHistory.CustomizableEdges = customizableEdges10;
+        btnHistory.CustomizableEdges = customizableEdges12;
         btnHistory.DisabledState.BorderColor = Color.DarkGray;
         btnHistory.DisabledState.CustomBorderColor = Color.DarkGray;
         btnHistory.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -241,7 +288,7 @@ partial class FormAdmin
         btnHistory.ForeColor = Color.White;
         btnHistory.Location = new Point(253, 7);
         btnHistory.Name = "btnHistory";
-        btnHistory.ShadowDecoration.CustomizableEdges = customizableEdges11;
+        btnHistory.ShadowDecoration.CustomizableEdges = customizableEdges13;
         btnHistory.Size = new Size(152, 40);
         btnHistory.TabIndex = 70;
         btnHistory.Text = "История заявок";
@@ -259,63 +306,6 @@ partial class FormAdmin
         guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges2;
         guna2Panel2.Size = new Size(443, 666);
         guna2Panel2.TabIndex = 72;
-        // 
-        // guna2HtmlLabel2
-        // 
-        guna2HtmlLabel2.BackColor = Color.Transparent;
-        guna2HtmlLabel2.Font = new Font("Segoe UI", 14F);
-        guna2HtmlLabel2.Location = new Point(11, 3);
-        guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-        guna2HtmlLabel2.Size = new Size(185, 27);
-        guna2HtmlLabel2.TabIndex = 80;
-        guna2HtmlLabel2.Text = "Список сотрудников:";
-        // 
-        // openFileDialog1
-        // 
-        openFileDialog1.FileName = "openFileDialog1";
-        // 
-        // flowLayoutPanel1
-        // 
-        flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-        flowLayoutPanel1.AutoScroll = true;
-        flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-        flowLayoutPanel1.Location = new Point(452, 139);
-        flowLayoutPanel1.Name = "flowLayoutPanel1";
-        flowLayoutPanel1.Size = new Size(493, 630);
-        flowLayoutPanel1.TabIndex = 73;
-        flowLayoutPanel1.WrapContents = false;
-        // 
-        // guna2HtmlLabel3
-        // 
-        guna2HtmlLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-        guna2HtmlLabel3.BackColor = Color.Transparent;
-        guna2HtmlLabel3.Font = new Font("Segoe UI", 14F);
-        guna2HtmlLabel3.Location = new Point(452, 106);
-        guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-        guna2HtmlLabel3.Size = new Size(154, 27);
-        guna2HtmlLabel3.TabIndex = 81;
-        guna2HtmlLabel3.Text = "Активные заявки:";
-        // 
-        // guna2Button1
-        // 
-        guna2Button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-        guna2Button1.BackColor = Color.Transparent;
-        guna2Button1.BorderRadius = 5;
-        guna2Button1.CustomizableEdges = customizableEdges3;
-        guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-        guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-        guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-        guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-        guna2Button1.FillColor = Color.FromArgb(16, 20, 27);
-        guna2Button1.Font = new Font("Segoe UI", 9F);
-        guna2Button1.ForeColor = Color.White;
-        guna2Button1.Location = new Point(569, 7);
-        guna2Button1.Name = "guna2Button1";
-        guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-        guna2Button1.Size = new Size(152, 40);
-        guna2Button1.TabIndex = 74;
-        guna2Button1.Text = "Сотрудники";
-        guna2Button1.Click += guna2Button1_Click;
         // 
         // guna2DataGridView1
         // 
@@ -388,6 +378,42 @@ partial class FormAdmin
         guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(67, 74, 84);
         guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.White;
         // 
+        // guna2HtmlLabel2
+        // 
+        guna2HtmlLabel2.BackColor = Color.Transparent;
+        guna2HtmlLabel2.Font = new Font("Segoe UI", 14F);
+        guna2HtmlLabel2.Location = new Point(11, 3);
+        guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+        guna2HtmlLabel2.Size = new Size(185, 27);
+        guna2HtmlLabel2.TabIndex = 80;
+        guna2HtmlLabel2.Text = "Список сотрудников:";
+        // 
+        // openFileDialog1
+        // 
+        openFileDialog1.FileName = "openFileDialog1";
+        // 
+        // flowLayoutPanel1
+        // 
+        flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+        flowLayoutPanel1.AutoScroll = true;
+        flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+        flowLayoutPanel1.Location = new Point(452, 139);
+        flowLayoutPanel1.Name = "flowLayoutPanel1";
+        flowLayoutPanel1.Size = new Size(493, 630);
+        flowLayoutPanel1.TabIndex = 73;
+        flowLayoutPanel1.WrapContents = false;
+        // 
+        // guna2HtmlLabel3
+        // 
+        guna2HtmlLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+        guna2HtmlLabel3.BackColor = Color.Transparent;
+        guna2HtmlLabel3.Font = new Font("Segoe UI", 14F);
+        guna2HtmlLabel3.Location = new Point(452, 106);
+        guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+        guna2HtmlLabel3.Size = new Size(154, 27);
+        guna2HtmlLabel3.TabIndex = 81;
+        guna2HtmlLabel3.Text = "Активные заявки:";
+        // 
         // FormAdmin
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
@@ -438,5 +464,6 @@ partial class FormAdmin
     private Guna2HtmlLabel guna2HtmlLabel3;
     private Guna2Button guna2Button1;
     private Guna2DataGridView guna2DataGridView1;
+    private Guna2Button guna2Button2;
 }
 

@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using YouKassaAssistant.UI.Domain;
+using YouKassaAssistant.UI.Infrastructure.Repositories;
 using YouKassaAssistant.UI.UseCase;
 
 namespace YouKassaAssistant.UI.FormDialog;
@@ -8,12 +9,24 @@ public partial class DialogWorkerEdit : Form
 {
     private readonly CreateConnectionToBack _sendToBack;
     private Worker LocalWorker;
+    private WorkerRepository _workerRepository;
+    private DialogWorkerList workerList;
 
-    public DialogWorkerEdit(CreateConnectionToBack sendToBack, bool isCreate, Worker worker)
+    public DialogWorkerEdit(CreateConnectionToBack sendToBack, bool isCreate, Worker worker, WorkerRepository workerRepository, DialogWorkerList dialogWorkerList)
     {
         InitializeComponent();
         _sendToBack = sendToBack;
         LocalWorker = worker;
+        _workerRepository = workerRepository;
+        workerList = dialogWorkerList;
+
+        var listPosition = new List<string>();
+        listPosition.Add("админ");
+        listPosition.Add("младший технический сотрудник");
+        listPosition.Add("технический сотрудник");
+        listPosition.Add("старший технический сотрудник");
+
+        guna2ComboBox1.Items.AddRange(listPosition.ToArray());
 
         if (isCreate)
         {
@@ -31,12 +44,12 @@ public partial class DialogWorkerEdit : Form
 
             Lastname.Text = LocalWorker.LastName;
             Firstname.Text = LocalWorker.FirstName;
+            Middlename.Text = LocalWorker.MiddleName;
+            contact1.Text = LocalWorker.Phone;
+
+            guna2ComboBox1.SelectedItem = LocalWorker.Position;
+            email.Text = LocalWorker.Login;
         }
-    }
-
-    public async Task UpdateListMessageAsync()
-    {
-
     }
 
     private void _btnCancel_Click(object sender, EventArgs e)
@@ -58,10 +71,25 @@ public partial class DialogWorkerEdit : Form
         UseCasePasswordChar.CheckChar(password2);
     }
 
-    private void btnSave_Click(object sender, EventArgs e)
+    private async void btnSave_Click(object sender, EventArgs e)
     {
         if (!CheckInfo())
             return;
+
+        var request = new Worker()
+        {
+            FirstName = Firstname.Text,
+            LastName = Lastname.Text,
+            MiddleName = Middlename.Text,
+            Phone = contact1.Text,
+            Position = guna2ComboBox1.Text,
+            WorkerId = LocalWorker.WorkerId
+        };
+
+        await _workerRepository.UpdateWorkerAsync(request);
+
+        await workerList.UpdateListAsync();
+        this.Close();
     }
 
     private bool CheckInfo()
@@ -92,6 +120,13 @@ public partial class DialogWorkerEdit : Form
         if (string.IsNullOrWhiteSpace(contact1.Text))
         {
             MessageBox.Show("Введите контактный телефон для связи", "Валидация", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            contact1.Focus();
+            return false;
+        }
+
+        if (string.IsNullOrWhiteSpace(guna2ComboBox1.Text))
+        {
+            MessageBox.Show("Обязательно нужно выбрать должность", "Валидация", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             contact1.Focus();
             return false;
         }
@@ -147,18 +182,45 @@ public partial class DialogWorkerEdit : Form
         return true;
     }
 
-    private void guna2Button1_Click(object sender, EventArgs e)
+    private async void guna2Button1_Click(object sender, EventArgs e)
     {
         if (!CheckAuthInfo())
             return;
 
         if (!CheckInfo())
             return;
+
+        var request = new RegistrationWorker()
+        {
+            FirstName = Firstname.Text,
+            LastName = Lastname.Text,
+            MiddleName = Middlename.Text,
+            Phone = contact1.Text,
+            Position = guna2ComboBox1.Text,
+            Login = email.Text,
+            Password = UseCaseSHA256.HashPassword(password1.Text)
+        };
+
+        await _workerRepository.CreateWorkerAsync(request);
+
+        await workerList.UpdateListAsync();
+        this.Close();
     }
 
-    private void guna2Button2_Click_1(object sender, EventArgs e)
+    private async void guna2Button2_Click_1(object sender, EventArgs e)
     {
         if (!CheckAuthInfo())
             return;
+
+        var request = new AuthDTO()
+        {
+            Login = email.Text,
+            Password = UseCaseSHA256.HashPassword(password1.Text)
+        };
+
+        await _workerRepository.UpdateUserWorkerAsync(request, LocalWorker.WorkerId);
+
+        await workerList.UpdateListAsync();
+        this.Close();
     }
 }

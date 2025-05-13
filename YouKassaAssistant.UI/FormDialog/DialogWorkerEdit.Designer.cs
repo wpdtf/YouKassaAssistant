@@ -272,7 +272,7 @@ partial class DialogWorkerEdit
         contact1.Location = new Point(385, 149);
         contact1.Multiline = true;
         contact1.Name = "contact1";
-        contact1.PlaceholderText = "Контактный телефон 1";
+        contact1.PlaceholderText = "Контактный телефон";
         contact1.SelectedText = "";
         contact1.ShadowDecoration.CustomizableEdges = customizableEdges18;
         contact1.Size = new Size(335, 38);
@@ -451,7 +451,6 @@ partial class DialogWorkerEdit
         guna2ComboBox1.Font = new Font("Segoe UI", 10F);
         guna2ComboBox1.ForeColor = Color.FromArgb(16, 20, 27);
         guna2ComboBox1.ItemHeight = 30;
-        guna2ComboBox1.Items.AddRange(new object[] { "сортировка по статусу", "сортировка важности" });
         guna2ComboBox1.Location = new Point(385, 195);
         guna2ComboBox1.Name = "guna2ComboBox1";
         guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;

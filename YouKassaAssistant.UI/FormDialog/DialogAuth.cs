@@ -68,14 +68,14 @@ public partial class DialogAuth : Form
 
         if (CurrentUser.Id > 0)
         {
-            if (CurrentUser.Position is "Админ")
+            if (CurrentUser.Position is "админ")
             {
-                FormAdmin form = new(_sendToBack);
+                FormAdmin form = new(_sendToBack, _workerRepository);
                 form.Show();
             }
             else if (CurrentUser.Position.Count() > 0)
             {
-                FormWorker form = new(_sendToBack);
+                FormWorker form = new(_sendToBack, _workerRepository);
                 form.Show();
             }
             else
