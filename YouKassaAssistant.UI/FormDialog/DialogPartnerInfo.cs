@@ -59,8 +59,6 @@ public partial class DialogPartnerInfo : Form
     private async void RatingStar_ValueChanged(object sender, EventArgs e)
     {
         await _sendToBack.UpdateUserScoreAsync(RatingStar.Value);
-
-        await UpdateListMessageAsync();
     }
 
     private async void guna2Button2_Click(object sender, EventArgs e)

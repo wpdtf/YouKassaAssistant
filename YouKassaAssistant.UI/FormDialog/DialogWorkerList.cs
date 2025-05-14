@@ -54,18 +54,7 @@ public partial class DialogWorkerList : Form
 
     private void guna2Button3_Click(object sender, EventArgs e)
     {
-        if (!UseCaseIsSelecedRow.IsSelecedRow(guna2DataGridView1))
-        {
-            return;
-        }
-
-        var selectedRow = guna2DataGridView1.SelectedRows[0];
-        var selectedModel = selectedRow.DataBoundItem;
-
-        if (selectedModel is Worker selectedWorker)
-        {
-            DialogWorkerEdit form = new(_sendToBack, true, selectedWorker, _workerRepository, this);
-            form.Show();
-        }
+        DialogWorkerEdit form = new(_sendToBack, true, null, _workerRepository, this);
+        form.Show();
     }
 }

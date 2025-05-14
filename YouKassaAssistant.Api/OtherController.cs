@@ -9,7 +9,7 @@ public class OtherController(DataBaseContext dbContext) : ControllerBase
 {
     private readonly IDbConnection connection = new SqlConnection(dbContext.Database.GetConnectionString());
 
-    private readonly string Name = "Ваши ИТ Заказы";
+    private readonly string Name = "Ваш кассовый ассистент";
     private readonly string Login = "lecarstvo21@gmail.com";
     private readonly string Password = "reqc lshh gxqi huhi";
 

@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS ТвойКассовыйАссистент
 CREATE DATABASE ТвойКассовыйАссистент
-ПрUSE [ТвойКассовыйАссистент]
+USE [ТвойКассовыйАссистент]
 GO
 /****** Object:  UserDefinedFunction [dbo].[НайтиЛогин]    Script Date: 13.05.2025 19:00:17 ******/
 SET ANSI_NULLS ON

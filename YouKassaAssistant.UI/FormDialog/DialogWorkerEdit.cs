@@ -141,7 +141,7 @@ public partial class DialogWorkerEdit : Form
         return true;
     }
 
-    private bool CheckAuthInfo()
+    private async Task<bool> CheckAuthInfo()
     {
         if (string.IsNullOrWhiteSpace(email.Text))
         {
@@ -179,12 +179,26 @@ public partial class DialogWorkerEdit : Form
             return false;
         }
 
+        if ((LocalWorker is null || LocalWorker.Login.Length == 0) && await _sendToBack.CheckLoginAsync(email.Text))
+        {
+            MessageBox.Show("Введенный логин уже существует", "Валидация", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            email.Focus();
+            return false;
+        }
+
+        if (LocalWorker is not null && LocalWorker.Login != email.Text && await _sendToBack.CheckLoginAsync(email.Text))
+        {
+            MessageBox.Show("Введенный логин уже существует", "Валидация", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            email.Focus();
+            return false;
+        }
+
         return true;
     }
 
     private async void guna2Button1_Click(object sender, EventArgs e)
     {
-        if (!CheckAuthInfo())
+        if (!await CheckAuthInfo())
             return;
 
         if (!CheckInfo())
@@ -209,7 +223,7 @@ public partial class DialogWorkerEdit : Form
 
     private async void guna2Button2_Click_1(object sender, EventArgs e)
     {
-        if (!CheckAuthInfo())
+        if (!await CheckAuthInfo())
             return;
 
         var request = new AuthDTO()
