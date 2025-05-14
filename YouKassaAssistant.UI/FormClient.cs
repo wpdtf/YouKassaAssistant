@@ -95,6 +95,11 @@ public partial class FormClient : Form
 
             await _clientRepository.CreateTikets(request);
             await UpdateTiketsInfo();
+
+            Theme.Text = "";
+            Description.Text = "";
+            bytesImage = null;
+            guna2PictureBox1.Image = null;
         }
         catch (Exception ex)
         {
